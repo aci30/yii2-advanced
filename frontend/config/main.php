@@ -15,6 +15,12 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=yii2_advanced',
+            'username' => 'admin',
+            'password' => 'admin',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -36,14 +42,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
+                'books' => 'book/index',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
